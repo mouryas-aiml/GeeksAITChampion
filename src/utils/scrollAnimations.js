@@ -1,8 +1,8 @@
-// Scroll animation utility
+// Scroll animation utility - Faster triggering
 export const initScrollAnimations = () => {
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.05, // Reduced from 0.1 to trigger earlier
+    rootMargin: '0px 0px -50px 0px' // Reduced from -100px to trigger sooner
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -28,10 +28,10 @@ export const addScrollAnimationClasses = () => {
     section.classList.add('scroll-animate');
   });
 
-  // Add animation to cards
+  // Add animation to cards - Faster delays
   const cards = document.querySelectorAll('.feature-card, .track-card, .sponsor-card, .faq-item, .info-card, .timeline-item');
   cards.forEach((card, index) => {
     card.classList.add('scroll-animate');
-    card.style.transitionDelay = `${index * 0.1}s`;
+    card.style.transitionDelay = `${index * 0.05}s`; // Reduced from 0.1s to 0.05s
   });
 };

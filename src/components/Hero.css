@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem;
+  padding: 8rem 2rem 2rem 2rem; /* Added top padding to prevent navbar collision */
   background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
 }
 
@@ -442,6 +442,10 @@
 }
 
 @media (max-width: 968px) {
+  .hero {
+    padding: 6rem 1.5rem 2rem 1.5rem; /* Adjusted for mobile navbar */
+  }
+
   .hero-title {
     font-size: 3rem;
   }
@@ -468,6 +472,10 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding: 5rem 1rem 2rem 1rem; /* Adjusted for smaller mobile screens */
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
